@@ -4,8 +4,8 @@ var alameinLine = ["Flinders Street", "Richmond", "East Richmond", "Burnley", "H
 var glenWaverlyLine = ["Flagstaff", "Melbourne Central", "Parliament", "Richmond", "Kooyong", "Tooronga"];
 var sandringhamLine = ["Southern Cross", "Richmond", "South Yarra", "Prahran", "Windsor"];
 
-var departStation = "Windsor";//prompt("What station are you departing from?");
-var arrivalStation = "Flinders Street"; //prompt("What station do you need to go to?");
+var departStation = prompt("What station are you departing from?");
+var arrivalStation = prompt("What station do you need to go to?");
 
 var stationIndex = 0;
 var stationLine = [];
@@ -18,10 +18,7 @@ console.log("destination " + arrivalStation);
 //determine what lines departStation and arrivalStation are at
 
 var checkStationLocation = function (stationName){
-if (stationName == "Richmond"){
-  stationIndex = [1];
-  stationLine = alameinLine; //special case when 1 station is Richmond
-} else if (alameinLine.includes(stationName)){
+if (alameinLine.includes(stationName)){
     stationIndex = alameinLine.indexOf(stationName);
     stationLine = alameinLine;
     //console.log(stationIndex, stationLine);
@@ -34,7 +31,7 @@ if (stationName == "Richmond"){
     stationLine = sandringhamLine;
     //console.log(stationIndex, stationLine);
   } else {
-    stationIndex = 99; // error handling for user typos
+    prompt("You did not enter a valid station name. Please refresh the page and try again."); // error handling for user typos
   }
 }
 
@@ -64,11 +61,12 @@ if (startLine == endLine){
     var travelDescription = travelArray.join("");
     //console.log(travelArray);
     console.log(travelDescription);
+    console.log(Math.abs(distance) + " stops total");
 } else { //code if startLine != endLine
   //journey to Richmond from startStation
 
   var distance1 = startIndex - startLine.indexOf("Richmond");
-  console.log(distance1);
+  //console.log(distance1);
   if (distance1 < 0){
     for (var i = 0; i <= Math.abs(distance1); i++){
         travelArray.push((startLine[startIndex + i]), "  --->  ");
@@ -82,7 +80,7 @@ if (startLine == endLine){
   //journey to endStation from Richmond
   var distance2 = endIndex - endLine.indexOf("Richmond"); //if negative: travel from left to right
 
-  console.log(distance2);
+  //console.log(distance2);
   if (distance2 > 0){
     for (var i = 1 ; i <= Math.abs(distance2); i++){
         travelArray.push((endLine[endLine.indexOf("Richmond") + i]), "  --->  ");
@@ -97,4 +95,5 @@ if (startLine == endLine){
     var travelDescription = travelArray.join("");
     //console.log(travelArray);
     console.log(travelDescription);
+    console.log((Math.abs(distance1)+Math.abs(distance2)+1) + " stops total");
 }
