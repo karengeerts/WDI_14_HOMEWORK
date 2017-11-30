@@ -45,8 +45,6 @@ checkStationLocation(arrivalStation);
 var endIndex = stationIndex;
 var endLine = stationLine;
 
-var travelArray =[];
-
 if (startLine == endLine){
   var distance = startIndex - endIndex;  //if negative: travel from left to right
 
@@ -64,7 +62,7 @@ if (startLine == endLine){
     }
     travelArray.pop();
     var travelDescription = travelArray.join("");
-    console.log(travelArray);
+    //console.log(travelArray);
     console.log(travelDescription);
 } else { //code if startLine != endLine
   //journey to Richmond from startStation
@@ -97,6 +95,6 @@ if (startLine == endLine){
 
     travelArray.pop();
     var travelDescription = travelArray.join("");
-    console.log(travelArray);
+    //console.log(travelArray);
     console.log(travelDescription);
 }
