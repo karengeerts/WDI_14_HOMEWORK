@@ -4,11 +4,11 @@ var alameinLine = ["Flinders Street", "Richmond", "East Richmond", "Burnley", "H
 var glenWaverlyLine = ["Flagstaff", "Melbourne Central", "Parliament", "Richmond", "Kooyong", "Tooronga"];
 var sandringhamLine = ["Southern Cross", "Richmond", "South Yarra", "Prahran", "Windsor"];
 
-var departStation = "Flagstaff";//prompt("What station are you departing from?");
-var arrivalStation = "Parliament"; //prompt("What station do you need to go to?");
+var departStation = "Windsor";//prompt("What station are you departing from?");
+var arrivalStation = "Flinders Street"; //prompt("What station do you need to go to?");
 
 var stationIndex = 0;
-var stationLine = "";
+var stationLine = [];
 
 var travelArray =[];
 
@@ -19,7 +19,8 @@ console.log("destination " + arrivalStation);
 
 var checkStationLocation = function (stationName){
 if (stationName == "Richmond"){
-  stationIndex = -1;
+  stationIndex = [1];
+  stationLine = alameinLine; //special case when 1 station is Richmond
 } else if (alameinLine.includes(stationName)){
     stationIndex = alameinLine.indexOf(stationName);
     stationLine = alameinLine;
@@ -44,12 +45,11 @@ checkStationLocation(arrivalStation);
 var endIndex = stationIndex;
 var endLine = stationLine;
 
-var distance = startIndex - endIndex;
-
+var travelArray =[];
 
 if (startLine == endLine){
-  var travelArray =[];
-  var distance = startIndex - endIndex; //if negative: travel from left to right
+  var distance = startIndex - endIndex;  //if negative: travel from left to right
+
   //console.log(distance);
 
   if (distance < 0){
@@ -66,7 +66,37 @@ if (startLine == endLine){
     var travelDescription = travelArray.join("");
     console.log(travelArray);
     console.log(travelDescription);
+} else { //code if startLine != endLine
+  //journey to Richmond from startStation
+
+  var distance1 = startIndex - startLine.indexOf("Richmond");
+  console.log(distance1);
+  if (distance1 < 0){
+    for (var i = 0; i <= Math.abs(distance1); i++){
+        travelArray.push((startLine[startIndex + i]), "  --->  ");
+    }
+  } else {
+      for (var i = 0; i <= Math.abs(distance1); i++){
+        travelArray.push((startLine[startIndex - i]), "  --->  ");
+      }
+    } //closing first if else
+
+  //journey to endStation from Richmond
+  var distance2 = endIndex - endLine.indexOf("Richmond"); //if negative: travel from left to right
+
+  console.log(distance2);
+  if (distance2 > 0){
+    for (var i = 1 ; i <= Math.abs(distance2); i++){
+        travelArray.push((endLine[endLine.indexOf("Richmond") + i]), "  --->  ");
+    }
+  } else {
+      for (var i = 1; i <= Math.abs(distance2); i++){
+        travelArray.push((endLine[endLine.indexOf("Richmond") - i]), "  --->  ");
+      }
+    }
+
+    travelArray.pop();
+    var travelDescription = travelArray.join("");
+    console.log(travelArray);
+    console.log(travelDescription);
 }
-
-
-// TO DO: if startLine != endLine
