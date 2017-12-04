@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 20px 50px;
+}
+
+div {
+    width: 960px;
+    box-sizing: border-box;
+}
+
+h1 {
+  color: silver
+}
+
+h3{
+  color: blue;
+}
+
+a{
+  text-decoration: none;
+  color:blue;
+}
+.logos {
+    border: 5px solid silver;
+    box-sizing: border-box;
+}
+
+footer{
+  color: silver;
+}
