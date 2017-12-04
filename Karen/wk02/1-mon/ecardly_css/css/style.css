@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+
+.logo{
+  display: block;
+  margin: 0 auto;
+}
+
+header{
+  background-image:url("/Users/karen/wdi/WDI_14_HOMEWORK/Karen/wk02/1-mon/ecardly_css/images/background.jpg");
+  background-repeat: repeat-x;
+  width: 100%;
+}
+
+body{
+  background-color: lightgrey;
+}
+
+.name{
+  color: red;
+}
+
+.dotted{
+  border:none;
+  border-top:1px dotted black;
+  color:#fff;
+  background-color:#fff;
+  height:1px;
+}
+
+
+.left_column, .right_column{
+  display: inline-block;
+  vertical-align: top;
+  background-color: white;
+}
+.left_column{
+  width:50%;
+  margin-left: 10%;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.right_column{
+  width:30%;
+  margin-left: 3%;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+
+.left_column > img{
+  width: 100%;
+}
+
+.right_column > img{
+  width: 100%;
+}
+
+footer > div{
+  padding-top: 30px;
+ width: 168px;
+ display: block;
+ margin: auto;
+}
