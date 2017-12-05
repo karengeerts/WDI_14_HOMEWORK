@@ -1,0 +1,135 @@
+*{
+  box-sizing: border-box;
+  font-family: verdana;
+}
+
+
+main{
+  padding: 5%;
+}
+h1{
+  padding-left: 5%;
+  color: red;
+  display: inline-block;
+  vertical-align: top;
+}
+
+h2{
+  color: silver;
+  padding-left: 3%;
+  padding-top: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.topnavbar #nav {
+list-style-type: none;
+margin: 0;
+padding-left: 5%;
+padding-right: 3%;
+ overflow: hidden;
+}
+
+.topnavbar li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 14px 16px;
+  width: 18%;
+  background-color: black;
+  height: auto;
+  }
+
+li a {
+  text-align: center;
+    }
+
+.topnavbar #nav a{
+  text-decoration: none;
+  color: white;
+}
+
+.date{
+  color:silver;
+  font-size: 28px;
+}
+
+.title{
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.firstcharacter {
+  color: silver;
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+.link{
+  text-align: right;
+  color: red;
+}
+
+.left_column, .right_column{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.left_column{
+  width:65%;
+  padding-right: 3%;
+}
+
+.right_column{
+  width:30%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+article img{
+  width:100%;
+}
+
+.ad img{
+  width:100%;
+  height:100%;
+}
+
+
+article{
+  border-bottom: 1px solid lightgrey;
+}
+
+footer nav {
+list-style-type: none;
+margin: 0;
+overflow: hidden;
+}
+
+footer li {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 8px;
+  height: auto;
+  color: red;
+  border-right: 1px solid lightgrey;
+  }
+.about{
+  padding-top: 25%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.popularPosts{
+border-top: 1px solid lightgrey;
+}
+
+#norightborder{
+  border: none;
+}
+
+footer p{
+  padding-left: 5%;
+}
