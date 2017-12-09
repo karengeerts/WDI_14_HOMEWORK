@@ -13,7 +13,12 @@ var checkingTransactionAmount = document.querySelector('.checking_transaction_am
 var depositToCheckingBtn = document.querySelector('.deposit_to_checking');
 var withdrawFromCheckingBtn = document.querySelector('.withdraw_from_checking');
 
-var makeDepositToSavings = function(amount){
+var number=300;
+var accountType = "savings";
+var totalAmount;
+
+
+var makeDepositToSavings = function(){
   totalSavingsAmount = totalSavingsAmount + Number(savingsTransactionAmount.value);
   totalSavingsLabel.textContent = totalSavingsAmount;
   if (totalSavingsAmount >0){
@@ -21,7 +26,7 @@ var makeDepositToSavings = function(amount){
   }
 };
 
-var withdrawFromSavings = function(amount){
+var withdrawFromSavings = function(){
   if (savingsTransactionAmount.value <=totalSavingsAmount){
   totalSavingsAmount = totalSavingsAmount - Number(savingsTransactionAmount.value);
   totalSavingsLabel.textContent = totalSavingsAmount;
@@ -42,7 +47,7 @@ function savings_gone_positive(){
 depositToSavingsBtn.addEventListener('click', makeDepositToSavings);
 withdrawFromSavingsBtn.addEventListener('click', withdrawFromSavings);
 
-var makeDepositToChecking = function(amount){
+var makeDepositToChecking = function(){
   totalCheckingAmount = totalCheckingAmount + Number(checkingTransactionAmount.value);
   totalCheckingLabel.textContent = totalCheckingAmount;
   if (totalCheckingAmount > 0){
@@ -50,7 +55,7 @@ var makeDepositToChecking = function(amount){
   }
 };
 
-var withdrawFromChecking = function(amount){
+var withdrawFromChecking = function(){
   if (checkingTransactionAmount.value <=totalCheckingAmount){
   totalCheckingAmount = totalCheckingAmount - Number(checkingTransactionAmount.value);
   totalCheckingLabel.textContent = totalCheckingAmount;
@@ -70,3 +75,28 @@ function checking_gone_positive(){
 
 depositToCheckingBtn.addEventListener('click', makeDepositToChecking);
 withdrawFromCheckingBtn.addEventListener('click', withdrawFromChecking);
+
+/*
+TO DO:
+- Add alert in case no overdraft possible
+- Make st00pid function work*/
+
+
+function checkOverdraft(number,accountType){
+  totalAmount = Number(totalSavingsAmount + totalCheckingAmount);
+  if (number <= totalAmount){
+    console.log("YES");
+    if (accountType === "savings"){
+      totalCheckingAmount = totalCheckingAmount - (number-totalSavingsAmount);
+      totalSavingsAmount = 0;
+      console.log("bwah");
+    } else{
+      totalSavingsAmount = totalSavingsAmount - (number-totalCheckingAmount);
+      totalCheckingAmount = 0;
+      console.log("eek");
+    }
+    totalCheckingLabel.textContent = totalCheckingAmount;
+    totalSavingsLabel.textContent = totalSavingsAmount;
+    return number;
+  }
+}
