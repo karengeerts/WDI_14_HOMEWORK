@@ -33,7 +33,7 @@ if (alameinLine.includes(stationName)){
   } else {
     prompt("You did not enter a valid station name. Please refresh the page and try again."); // error handling for user typos
   }
-}
+}; //end checkStationLocation function
 
 checkStationLocation(departStation);
 var startLine = stationLine;
@@ -44,9 +44,7 @@ var endLine = stationLine;
 
 if (startLine == endLine){
   var distance = startIndex - endIndex;  //if negative: travel from left to right
-
-  //console.log(distance);
-
+  //lines 50 to 64 handle case where start and end station are on same line
   if (distance < 0){
     for (var i = 0; i <= Math.abs(distance); i++){
         travelArray.push((startLine[startIndex + i]), "  --->  ");
@@ -62,11 +60,12 @@ if (startLine == endLine){
     //console.log(travelArray);
     console.log(travelDescription);
     console.log(Math.abs(distance) + " stops total");
-} else { //code if startLine != endLine
-  //journey to Richmond from startStation
+} else {
+  //code if startLine != endLine
+  //first: determine journey to Richmond from startStation
 
   var distance1 = startIndex - startLine.indexOf("Richmond");
-  //console.log(distance1);
+  //(distance1 determines how many stations and direction);
   if (distance1 < 0){
     for (var i = 0; i <= Math.abs(distance1); i++){
         travelArray.push((startLine[startIndex + i]), "  --->  ");
@@ -75,7 +74,7 @@ if (startLine == endLine){
       for (var i = 0; i <= Math.abs(distance1); i++){
         travelArray.push((startLine[startIndex - i]), "  --->  ");
       }
-    } //closing first if else
+    }
 
   //journey to endStation from Richmond
   var distance2 = endIndex - endLine.indexOf("Richmond"); //if negative: travel from left to right
@@ -91,9 +90,8 @@ if (startLine == endLine){
       }
     }
 
-    travelArray.pop();
-    var travelDescription = travelArray.join("");
-    //console.log(travelArray);
-    console.log(travelDescription);
-    console.log((Math.abs(distance1)+Math.abs(distance2)+1) + " stops total");
+  travelArray.pop();
+  var travelDescription = travelArray.join("");
+  console.log(travelDescription);
+  console.log((Math.abs(distance1)+Math.abs(distance2)+1) + " stops total");
 }

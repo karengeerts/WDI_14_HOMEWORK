@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 17%;
+}
+.logo{
+display: inline-block;
+vertical-align: top;
+}
+
+.savings, .checking{
+  display: inline-block;
+  vertical-align:top;
+  margin-top: 20%;
+  width: 25%;
+  text-align: center;
+  height:27%;
+  border: 3px solid black;
+  padding-bottom: 20px;
+}
+
+.savings{
+  background-color: silver;
+  margin-left: 20%;
+  margin-right: 5%;
+}
+
+.checking{
+  background-color: silver;
+  margin-left: 5%;
+  margin-right: 10%;
+  }
+
+.checking_transaction_amount, .savings_transaction_amount{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 40px;
+}
+
+.shows_balance{
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 30px;
+  padding-top: 5px;
+  background-color: silver;
+}
+
+.gone_in_red{
+  background-color: red;
+}
+
+button{
+  display: inline-block;
+  margin-top:15px;
+  color: darkgreen;
+  margin-bottom:5px;
+}
+
+input{
+  background-color: mistyrose;
+}
