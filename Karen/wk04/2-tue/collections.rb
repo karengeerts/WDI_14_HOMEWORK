@@ -10,7 +10,7 @@ planeteers.push("Heart")
 
 #Remove "Captain Planet" from the array (without using a method).
 # google removing elements from an array without
-planeteers - ["Captain Planet"]
+planeteers = planeteers - ["Captain Planet"]
 
 #Combine planeteers with rangers = ["Red", "Blue", "Pink", "Yellow", "Black"] and save the result in a variable called heroes.
 rangers = ["Red", "Blue", "Pink", "Yellow", "Black"]
@@ -28,6 +28,7 @@ heroes.sample
 
 #Select all elements in heroes that begin with "B" using a method. The Ruby documentation might help.
 heroes.select { |hero| hero[0] == "B" }
+heroes.select { |hero| hero.start_with?"B"}
 
 #Hashes
 #Initialize a hash called ninja_turtle with the properties name, weapon and radical. They should have values of "Michelangelo", "Nunchuks" and true respectively.
@@ -55,9 +56,5 @@ ninja_turtle.keys
 #Print out each key-value pair in the following format - "KEY's is equal to VALUE" -- using a method. The Ruby documentation might help.
 
 ninja_turtle.each do |key, value|
-  if key.is_a? String
-    key = key.upcase
-    value = value.upcase
-  end
-  puts "#{key} is equal to #{value}."
+  puts "#{key.to_s.upcase}'s is equal to #{value.to_s.upcase}."
 end
