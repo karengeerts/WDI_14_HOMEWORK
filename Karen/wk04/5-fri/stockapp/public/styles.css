@@ -1,0 +1,22 @@
+html,body{
+  height: 100%;
+}
+
+body{
+  background-color: mistyrose;
+  font-family: 'Risque', cursive;
+  font-size: 40px;
+}
+
+div{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+p{
+  color: green;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
