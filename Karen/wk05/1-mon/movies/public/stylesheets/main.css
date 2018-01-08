@@ -1,0 +1,50 @@
+body{
+  background-color: lightblue;
+  font-family: 'Raleway', sans-serif;
+  color: darkblue;
+}
+
+.result{
+  margin-top: 20px;
+}
+
+input[type=text] {
+  height: 50px;
+  width: 500px;
+  border: 1px solid darkblue;
+  border-radius: 0;
+  -webkit-appearance: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: darkblue;
+}
+
+button{
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  color: darkblue;
+  border-radius: 12px;
+  background-color: yellow;
+}
+
+img{
+  display: inline-block;
+  float: left;
+}
+
+.details{
+  padding-left: 400px;
+}
+
+.title{
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+
+.people{
+  font-size: 30px;
+}
+
+p{
+  font-size: 25px;
+}
