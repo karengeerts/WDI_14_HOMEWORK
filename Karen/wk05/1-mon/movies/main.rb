@@ -46,3 +46,9 @@ get '/movie' do
   @result = HTTParty.get(movie_request)
   erb :movie
 end
+
+get '/history' do
+  file = File.readlines('history.txt')
+  @list = file #array of queries
+  erb :history
+end
