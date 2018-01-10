@@ -14,6 +14,11 @@ get '/about' do
 end
 
 get '/movie_input' do
+  file = File.open('history.txt', 'a') #append mode
+    file.puts(params[:title])
+    file.close
+
+
   movie_request = "http://www.omdbapi.com/?apikey=2f6435d9&s=#{params[:title]}"
   @movies = HTTParty.get(movie_request)
 
@@ -25,7 +30,15 @@ get '/movie_input' do
     counter += 1
     @movie_results.push({name: @name, id: @imdbID})
   end
-  erb :movies
+
+  if @movie_results.length == 1
+    movie_request = "http://www.omdbapi.com/?apikey=2f6435d9&t=#{params[:title]}"
+    @result = HTTParty.get(movie_request)
+    erb :movie
+  else
+    erb :movies
+  end
+
 end
 
 get '/movie' do
