@@ -1,0 +1,8 @@
+<h1>Hello! I'm <%=@kitten['name']%>.</h1>
+<p>My special skillz are <%=@kitten['skillz']%></p>
+<img src="<%=@kitten['image_url'] %>" alt="pic">
+<div>
+<form action="/cute_kittens/<%=@kitten['id']%>/delete" method="post">
+  <button>Adopt this kitten</button>
+</form>
+</div>

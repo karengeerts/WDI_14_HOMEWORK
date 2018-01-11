@@ -1,0 +1,14 @@
+<h1>Cute kittens for adoption</h1>
+<% @kittens.each do |kitten| %>
+<ul>
+  <li>
+    My name is <%= kitten['name'].upcase%> and my special skillz are <%= kitten['skillz'].downcase%>.  <a href="/cute_kittens/<%= kitten['id']%>">Adopt me!</a>
+  </li>
+</ul>
+<% end %>
+
+<div>
+<form class="" action="/cute_kittens/new" method="get">
+<button>Add new kitten</button>
+</form>
+</div>

@@ -1,0 +1,29 @@
+body{
+  font-family: Gill Sans Extrabold, sans-serif;
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+form {
+  display: inline-block;
+  justify-content: center;
+  line-height: 30px;
+}
+
+label{
+  font-size: 20px;
+}
+
+button{
+  display: inline-block;
+  margin-left: 150px;
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 30px;
+}
+
+img{
+  max-height: 50%;
+  max-width: 50%;
+}
