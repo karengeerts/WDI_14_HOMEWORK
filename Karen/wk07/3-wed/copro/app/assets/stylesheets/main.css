@@ -1,0 +1,29 @@
+label, input{
+  display: block;
+}
+
+.container {
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+}
+
+.project {
+  width: 50%;
+  float: left;
+}
+
+.project img {
+  display: block; /* space under image */
+}
+
+@media (min-width: 700px) {
+  .project {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .project {
+    width: 25%;
+  }
+}

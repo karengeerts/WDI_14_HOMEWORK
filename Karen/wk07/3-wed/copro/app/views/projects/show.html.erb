@@ -1,0 +1,16 @@
+<h1>Project name: <%=@project.title%></h1>
+<h2>Created by: <%=@project.user_id%></h2>
+<img src="<%= @project.preview.url %>" alt="">
+
+<form action="/comments" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="id" value="<%= @project.id %>">
+  <textarea name="body" cols="30" rows="10"></textarea>
+  <button>post comment</button>
+</form>
+
+<% @project.comments.each do |comment| %>
+<hr>
+<p><%= comment.body %></p>
+<p><%= comment.user_id %></p>
+<% end %>
