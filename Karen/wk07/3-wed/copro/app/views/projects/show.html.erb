@@ -1,5 +1,5 @@
 <h1>Project name: <%=@project.title%></h1>
-<h2>Created by: <%=@project.user_id%></h2>
+<h2>Created by: <%=@project.user.email%></h2>
 <img src="<%= @project.preview.url %>" alt="">
 
 <form action="/comments" method="post">
@@ -12,5 +12,5 @@
 <% @project.comments.each do |comment| %>
 <hr>
 <p><%= comment.body %></p>
-<p><%= comment.user_id %></p>
+<p><%= comment.user.email %></p>
 <% end %>
