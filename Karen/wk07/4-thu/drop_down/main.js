@@ -13,6 +13,9 @@ function changeEventHandler(event) {
     else if (event.target.value == "NYC") {
         document.body.style.background = "url(../drop_down/images/nyc.jpg) no-repeat center center fixed";
     }
+    else if (event.target.value == "SF") {
+        document.body.style.background = "url(../drop_down/images/sf.jpg) no-repeat center center fixed";
+    }
     else {
       document.body.style.background = "url(../drop_down/images/sydney.jpg) no-repeat center center fixed";
     }
