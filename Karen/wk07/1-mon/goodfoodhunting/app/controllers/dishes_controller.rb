@@ -33,4 +33,11 @@ class DishesController < ApplicationController
     end
   end
 
+  def edit
+		dish = Dish.find_by(id: params[:id])
+		dish.title = params[:edit]
+		dish.save
+		redirect_to '/dishes'
+	end
+
 end

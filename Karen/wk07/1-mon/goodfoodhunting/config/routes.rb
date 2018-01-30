@@ -11,10 +11,7 @@ Rails.application.routes.draw do
   #delete '/dishes/:id', to: 'dishes#destroy'
   #edit '/dishes/:id/edit', to: 'dishes#edit'
 
-
-  #get '/' = root
-  #get '/', to: 'pages#home'
-  #root to: 'pages#home'
+  get '/', to: 'pages#home'
 
 
 end
