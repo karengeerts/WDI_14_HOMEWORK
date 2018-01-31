@@ -16,10 +16,10 @@ var $searchbutton = $('button').on('click', function(){
       results.forEach(function(movie){
 
         var newDivElem = $('<div>');
-        var newAnchorElem = $('<a href="#"></a>');
+        var newAnchorElem = $('<a href="#"><h2>' + movie.Title + '</h2></a>');
 
-        newAnchorElem.text(movie.Title);
         newAnchorElem.attr("href","http://www.imdb.com/title/" + movie.imdbID);
+
         newDivElem.append(newAnchorElem);
         $container.append(newDivElem);
       });
