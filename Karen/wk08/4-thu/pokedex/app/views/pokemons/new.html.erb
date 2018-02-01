@@ -1,0 +1,8 @@
+<h3>Add new Pokemons here please</h3>
+<form action="/pokemons" method="post">
+  <input type="text" name="nickname" value="nickname">
+  <input type="text" name="species" value="species">
+  <input type="text" name="level" value="level">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <button>create</button>
+</form>

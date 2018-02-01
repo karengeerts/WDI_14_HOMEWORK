@@ -1,0 +1,13 @@
+<h3>Search your Pokemon collection</h3>
+<form action="/pokemons" method="get">
+  <input type="text" name="species" value="species">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <button>Search</button>
+</form>
+
+
+<% @pokemons.each do |pokemon| %>
+<p><%= pokemon.nickname %> - <%= pokemon.species %> - <%= pokemon.level %> </p>
+<% end %>
+
+<a href="/pokemons/new">Add new Pokemon to your collection</a>
