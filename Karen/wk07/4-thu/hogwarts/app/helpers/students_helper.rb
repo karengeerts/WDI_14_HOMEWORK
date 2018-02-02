@@ -1,4 +1,4 @@
-class StudentsHelper
+module StudentsHelper
 
   def self.sort
     random_house = rand(0...House.count)

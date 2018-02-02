@@ -17,13 +17,11 @@ class PokemonsController < ApplicationController
     end
   end
 
-  def show
-    @pokemon = Pokemon.find_by(species:params[:species])
-    if !@pokeman
-      @message = "Pokemon not found"
-      end
+  def search
+    @results = Pokemon.where("species ILIKE ?", params[:species])
+    if !@results
+      @message = "No Pokemons found of the #{:species} species."
+    end
   end
-
-
 
 end

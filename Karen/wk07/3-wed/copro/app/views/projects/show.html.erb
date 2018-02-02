@@ -1,6 +1,17 @@
 <h1>Project name: <%=@project.title%></h1>
 <h2>Created by: <%=@project.user.email%></h2>
-<img src="<%= @project.preview.url %>" alt="">
+
+<div class="detail-image">
+  <img src="<%= @project.preview.url %>" alt="">
+  <span>&#10086;</span>
+</div>
+
+<form action="/likes" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="project_id" value="<%= @project.id %>">
+  <span class="likesCounter"> <%=@project.likes.count %> </span>
+<button>Like</button>
+</form>
 
 <form action="/comments" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -14,3 +25,13 @@
 <p><%= comment.body %></p>
 <p><%= comment.user.email %></p>
 <% end %>
+
+<script>
+  var heart = document.querySelector('.detail-image span');
+
+    heart.addEventListener('click',function(event){
+      var likesCount = document.querySelector('.likesCounter');
+      likesCount.textContent = Number(likesCount.textContent) + 1;
+    });
+
+</script>

@@ -7,9 +7,28 @@ label, input{
   /*flex-wrap: wrap;*/
 }
 
+.detail-image {
+  width: 300px;
+  position: relative;
+  border: 3px solid black;
+}
+
+.detail-image span {
+  position: absolute; /*this property allows for offset properties to be used. properties are relative to viewport */
+  right: 10px;
+  top: 10px;
+  font-size: 2em;
+  position: absolute;
+}
+
 .project {
   width: 50%;
   float: left;
+  background-color: mistyrose;
+}
+
+.project h2 {
+  display: none;
 }
 
 .project img {
@@ -18,12 +37,15 @@ label, input{
 
 @media (min-width: 700px) {
   .project {
-    width: 33.3333%;
+    width: 25%;
+  }
+  .project h2{
+    display: block;
   }
 }
 
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
   .project {
     width: 25%;
   }
-}
+} */

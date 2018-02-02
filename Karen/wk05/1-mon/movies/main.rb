@@ -32,19 +32,21 @@ get '/movie_input' do
   end
 
   if @movie_results.length == 1
-    movie_request = "http://www.omdbapi.com/?apikey=2f6435d9&t=#{params[:title]}"
-    @result = HTTParty.get(movie_request)
-    erb :movie
+    show_movie(@movie_results.first[:id])
   else
     erb :movies
   end
 
 end
 
-get '/movie' do
-  movie_request = "http://www.omdbapi.com/?apikey=2f6435d9&i=#{params[:id]}"
+def show_movie(id)
+  movie_request = "http://www.omdbapi.com/?apikey=2f6435d9&i=#{id}"
   @result = HTTParty.get(movie_request)
   erb :movie
+end
+
+get '/movie' do
+  show_movie(params[:id])
 end
 
 get '/history' do
