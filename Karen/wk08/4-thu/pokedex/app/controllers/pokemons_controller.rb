@@ -20,7 +20,7 @@ class PokemonsController < ApplicationController
   def search
     @results = Pokemon.where("species ILIKE ?", params[:species])
     if !@results
-      @message = "No Pokemons found of the #{:species} species."
+      @message = "No Pokemons found of that species."
     end
   end
 
