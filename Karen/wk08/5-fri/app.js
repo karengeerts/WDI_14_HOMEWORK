@@ -1,6 +1,7 @@
 var $container = $('.container');
 var $addBtn = $('button');
 
+
 $addBtn.on('click', function(){
   var $searchQuery = $('input').val();
   var result = sendRequest($searchQuery,10,0);
@@ -24,7 +25,12 @@ var addImages = function(result){
     $newImg.attr("height", 460);
     $container.append($newImg);
   }
+  /*$('.container').infiniteScroll({
+    // options
+    path: function(){
+
+    },
+    append: '.post',
+    history: false,
+  });*/
 };
-/*
-<iframe src="https://giphy.com/embed/VDQXaeVt2r1kY" width="480" height="460" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/VDQXaeVt2r1kY">via GIPHY</a></p>
-*/
