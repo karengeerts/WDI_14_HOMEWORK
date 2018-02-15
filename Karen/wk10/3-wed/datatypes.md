@@ -71,7 +71,7 @@ typeof 1 != 2
 // Actual: Nan
 ```
 
-### Arrays
+<!--### Arrays
 
 Javascript provides us with a number of native methods that allow us to interact with arrays. Find methods that do each of the following and provide an example...
 * Add an element to the back of an array.
@@ -80,11 +80,23 @@ Javascript provides us with a number of native methods that allow us to interact
 * Remove an element from the front of an array.
 * Concatenates all the elements in an array into a string.
 * Separates the characters of a string into an array. This one is a string method.
+-->
+ <!-- > This is a great exercise for practicing your "Google Fu"! If you need a starting point, check out [MDN's documentation page on arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).  -->
 
-> This is a great exercise for practicing your "Google Fu"! If you need a starting point, check out [MDN's documentation page on arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
-```js
-// Your answers go here.
+test_array = [1,2,3]
+// Add an element to the back of an array.
+test_array.push(4))
+//* Remove an element from the back of an array.
+test_array.pop()
+//* Add an element to the front of an array.
+test_array.unshift(4)
+//* Remove an element from the front of an array.
+test_array.shift(4)
+//* Concatenates all the elements in an array into a string.
+test=test_array.join('')
+//* Separates the characters of a string into an array. This one is a string method.
+test.split('')
 ```
 
 What will the contents of the below arrays be after the code samples are executed? Come up with an answer yourself before testing it out in the console.
@@ -97,7 +109,9 @@ numbers.unshift(3)
 ```
 
 ```text
-Your answer goes here.
+[4,6,8]
+[4,6,8,10]
+[3,4,6,8,10]
 ```
 
 What is the return value of the below code sample? Come up with an answer yourself before testing it out in the console.
@@ -109,8 +123,7 @@ moreMorse.split(" ")
 ```
 
 ```text
-Your answer goes here.
-```
+["dot", "dash", "pause", "dash", "dot"]```
 
 What will the contents of the below array be after the below code sample is executed? Come up with an answer yourself before testing it out in the console.
 
@@ -126,8 +139,7 @@ bands[1][3] = "Ringo"
 ```
 
 ```text
-Your answer goes here.
-```
+[["Mick", "Keith", "Ronnie", "Charlie"],["Paul", "John", "George","Ringo"]]```
 
 ## Booleans & Comparison Operators
 
